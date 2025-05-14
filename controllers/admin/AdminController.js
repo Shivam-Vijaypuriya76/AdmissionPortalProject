@@ -8,8 +8,9 @@ class AdminController{
         try {
           res.render('admin/dashboard')
         } catch (error) {
-          console.log(error)
-        }
+  console.error('Dashboard render error:', error);
+  res.status(500).send('Internal Server Error');
+}
     }
 
     static studentDisplay = async(req,res)=>{
